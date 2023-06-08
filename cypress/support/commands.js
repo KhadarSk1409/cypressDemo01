@@ -1,4 +1,4 @@
-import { loginPage } from '../e2e/UI/pageObjects/login';
+import loginPage from '../e2e/UI/pageObjects/login';
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -14,8 +14,9 @@ import { loginPage } from '../e2e/UI/pageObjects/login';
 // Cypress.Commands.add('login', (email, password) => { ... })
     Cypress.Commands.add('login',(email,password)=>{
     loginPage.navigateTo(Cypress.env('url'))
-      loginPage.shouldIncludeInUrl('/login')
-      loginPage.enterCredentials(email,password)
+    loginPage.isTextEquals('.white','Login')
+    
+   loginPage.enterCredentials(email,password)
       loginPage.shouldIncludeInUrl('/dashboard')
 })
 //

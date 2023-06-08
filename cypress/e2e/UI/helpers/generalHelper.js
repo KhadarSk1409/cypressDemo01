@@ -3,6 +3,9 @@ navigateTo(url){
    cy.visit(url)
    
 }
+isTextEquals(selector,text){
+  return this.getSelector(selector).should('have.text',text)
+}
 
     isContentVisible(message) {
       return cy.contains(message).should('be.visible');

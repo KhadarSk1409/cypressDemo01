@@ -1,7 +1,11 @@
 import Helper from '../helpers/generalhelper';
 
- export class Login extends Helper {
+ class Login extends Helper {
  //Locators
+
+ getTitle(){
+  return this.getSelector('.white')
+ }
 
  getEmail(){
   return this.getSelector('input[name="email"]')
@@ -34,4 +38,4 @@ import Helper from '../helpers/generalhelper';
   
 }
 
-export const loginPage = new Login();
+export default new Login();
